@@ -241,22 +241,91 @@
 // console.log(p)
 
 
-const p = new Promise((resolve,reject)=>{
-    console.log("going to do the homework...")
+// const p = new Promise((resolve,reject)=>{
+//     console.log("going to do the homework...")
 
-    setTimeout(()=>{
-        const done=true;   // if false then not done will be printed
-        if(done){
-            resolve("homework done")
-        }
-        else{
-            reject("not done")
-        }
-    },3000)
-})
+//     setTimeout(()=>{
+//         const done=true;   // if false then not done will be printed
+//         if(done){
+//             resolve("homework done")
+//         }
+//         else{
+//             reject("not done")
+//         }
+//     },3000)
+// })
 
-p.then((msg)=>{
-    console.log(msg)
-}).catch((error)=>{
-    console.log(error)
-})
+// p.then((msg)=>{
+//     console.log(msg)
+// }).catch((error)=>{
+//     console.log(error)
+// })
+
+
+function dohomework(){
+    const p=new Promise((resolve,reject)=>{
+        setTimeout(() => {
+            let done=true;
+            if (done){
+                console.log("homework is done")
+                resolve("homework done !!")
+            }
+            else{
+                reject("homework not done")
+            }
+            
+        }, 2000);
+
+    })
+    return p;
+}
+
+
+function eatdinner(){
+    const p=new Promise((resolve,reject)=>{
+        setTimeout(() => {
+            let done=true;
+            if (done){
+                console.log("dinner is done")
+                resolve("dinner done !!")
+            }
+            else{
+                reject("dinner not done")
+            }
+            
+        }, 2000);
+
+    })
+    return p;
+}
+
+
+function goToPlayground(){
+    const p=new Promise((resolve,reject)=>{
+        setTimeout(() => {
+            let done=true;
+            if (done){
+                console.log("going to playground")
+                resolve("gone to playground !!")
+            }
+            else{
+                reject("not allowed to go to playground")
+            }
+            
+        }, 2000);
+
+    })
+    return p;
+}
+
+
+dohomework().then((data)=>{
+    console.log(data)
+    return eatdinner()
+    }).then((data)=>{
+        console.log(data)
+        return goToPlayground()
+    }).then((data)=>{
+        console.log("go to sleep")
+        
+    })
