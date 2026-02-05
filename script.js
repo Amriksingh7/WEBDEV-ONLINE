@@ -262,70 +262,118 @@
 // })
 
 
-function dohomework(){
-    const p=new Promise((resolve,reject)=>{
-        setTimeout(() => {
-            let done=true;
-            if (done){
-                console.log("homework is done")
-                resolve("homework done !!")
-            }
-            else{
-                reject("homework not done")
-            }
+// function dohomework(){
+//     const p=new Promise((resolve,reject)=>{
+//         setTimeout(() => {
+//             let done=true;
+//             if (done){
+//                 console.log("homework is done")
+//                 resolve("homework done !!")
+//             }
+//             else{
+//                 reject("homework not done")
+//             }
             
-        }, 2000);
+//         }, 2000);
 
-    })
-    return p;
-}
+//     })
+//     return p;
+// }
 
 
-function eatdinner(){
-    const p=new Promise((resolve,reject)=>{
-        setTimeout(() => {
-            let done=true;
-            if (done){
-                console.log("dinner is done")
-                resolve("dinner done !!")
-            }
-            else{
-                reject("dinner not done")
-            }
+// function eatdinner(){
+//     const p=new Promise((resolve,reject)=>{
+//         setTimeout(() => {
+//             let done=true;
+//             if (done){
+//                 console.log("dinner is done")
+//                 resolve("dinner done !!")
+//             }
+//             else{
+//                 reject("dinner not done")
+//             }
             
-        }, 2000);
+//         }, 2000);
 
-    })
-    return p;
-}
+//     })
+//     return p;
+// }
 
 
-function goToPlayground(){
-    const p=new Promise((resolve,reject)=>{
-        setTimeout(() => {
-            let done=true;
-            if (done){
-                console.log("going to playground")
-                resolve("gone to playground !!")
-            }
-            else{
-                reject("not allowed to go to playground")
-            }
+// function goToPlayground(){
+//     const p=new Promise((resolve,reject)=>{
+//         setTimeout(() => {
+//             let done=true;
+//             if (done){
+//                 console.log("going to playground")
+//                 resolve("gone to playground !!")
+//             }
+//             else{
+//                 reject("not allowed to go to playground")
+//             }
             
-        }, 2000);
+//         }, 2000);
 
-    })
-    return p;
-}
+//     })
+//     return p;
+// }
 
 
-dohomework().then((data)=>{
-    console.log(data)
-    return eatdinner()
-    }).then((data)=>{
-        console.log(data)
-        return goToPlayground()
-    }).then((data)=>{
-        console.log("go to sleep")
+// dohomework().then((data)=>{
+//     console.log(data)
+//     return eatdinner()
+//     }).then((data)=>{
+//         console.log(data)
+//         return goToPlayground()
+//     }).then((data)=>{
+//         console.log("go to sleep")
         
+//     })
+console.log("first line")
+setTimeout(() => {
+    console.log('inside  timeout')
+    
+}, 0);
+
+
+function orderfood(){
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            console.log("food ordered")
+            resolve()
+            
+        }, 2000);
     })
+}
+
+
+function preparefood(){
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            console.log("food prepared")
+            resolve()
+            
+        }, 2000);
+    })
+}
+
+
+function deliverfood(){
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            console.log("food delivered")
+            resolve()
+            
+        }, 2000);
+    })
+}
+
+
+async function foodorder() {
+    await orderfood()
+    await preparefood()
+    await deliverfood()
+    console.log("enjoy your food")
+    
+}
+foodorder()
