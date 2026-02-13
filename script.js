@@ -329,51 +329,96 @@
 //         console.log("go to sleep")
         
 //     })
-console.log("first line")
-setTimeout(() => {
-    console.log('inside  timeout')
+// console.log("first line")
+// setTimeout(() => {
+//     console.log('inside  timeout')
     
-}, 0);
+// }, 0);
 
 
-function orderfood(){
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            console.log("food ordered")
-            resolve()
+// function orderfood(){
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             console.log("food ordered")
+//             resolve()
             
-        }, 2000);
-    })
-}
+//         }, 2000);
+//     })
+// }
 
 
-function preparefood(){
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            console.log("food prepared")
-            resolve()
+// function preparefood(){
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             console.log("food prepared")
+//             resolve()
             
-        }, 2000);
-    })
-}
+//         }, 2000);
+//     })
+// }
 
 
-function deliverfood(){
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            console.log("food delivered")
-            resolve()
+// function deliverfood(){
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             console.log("food delivered")
+//             resolve()
             
-        }, 2000);
-    })
-}
+//         }, 2000);
+//     })
+// }
 
 
-async function foodorder() {
-    await orderfood()
-    await preparefood()
-    await deliverfood()
-    console.log("enjoy your food")
+// async function foodorder() {
+//     await orderfood()
+//     await preparefood()
+//     await deliverfood()
+//     console.log("enjoy your food")
     
+// }
+// foodorder()
+
+
+console.log("first")
+try{
+    console.log(sample)}
+catch(err){
+    console.log(err)
 }
-foodorder()
+finally{
+    try{console.log(sample)}
+    catch(e){
+        console.log(e)
+
+    }
+    console.log("final block")
+}
+// console.log(sample)
+console.log("second")
+
+
+
+
+async function getProducts() {
+    try {
+        const response = await fetch("https://dummyjson.com/products");
+        
+        const data = await response.json();
+
+        console.log(response.ok);
+
+        if (!response.ok) {
+            throw new Error("Something went wrong");
+        }
+
+        data.products.forEach((product) => {
+            console.log(product.title);
+        });
+
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+getProducts();
+
