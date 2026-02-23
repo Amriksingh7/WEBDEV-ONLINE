@@ -379,46 +379,88 @@
 // foodorder()
 
 
-console.log("first")
-try{
-    console.log(sample)}
-catch(err){
-    console.log(err)
-}
-finally{
-    try{console.log(sample)}
-    catch(e){
-        console.log(e)
+// console.log("first")
+// try{
+//     console.log(sample)}
+// catch(err){
+//     console.log(err)
+// }
+// finally{
+//     try{console.log(sample)}
+//     catch(e){
+//         console.log(e)
 
-    }
-    console.log("final block")
-}
+//     }
+//     console.log("final block")
+// }
 
-console.log("second")
-
-
+// console.log("second")
 
 
-async function getProducts() {
-    try {
-        const response = await fetch("https://dummyjson.com/products");
+
+
+// async function getProducts() {
+//     try {
+//         const response = await fetch("https://dummyjson.com/products");
         
-        const data = await response.json();
+//         const data = await response.json();
 
-        console.log(response.ok);
+//         console.log(response.ok);
 
-        if (!response.ok) {
-            throw new Error("Something went wrong");
-        }
+//         if (!response.ok) {
+//             throw new Error("Something went wrong");
+//         }
 
-        data.products.forEach((product) => {
-            console.log(product.title);
-        });
+//         data.products.forEach((product) => {
+//             console.log(product.title);
+//         });
 
-    } catch (e) {
-        console.log(e);
-    }
-}
+//     } catch (e) {
+//         console.log(e);
+//     }
+// }
 
-getProducts();
+// getProducts();
+
+// const response=await fetch("https://jsonplaceholder.typicode.com/posts",{
+//     method:"POST",
+//     headers:{
+//         "Content-Type":"application/json"
+//     },
+//     body:JSON.stringify({
+//         title:"foo",
+//         body:"bar",
+//         userId:1
+//     })
+// })
+// if(!response.ok){
+//     throw new Error("Something went wrong")
+// }
+// const data= await response.json()
+// console.log(data)
+
+
+// localStorage.setItem("obj",JSON.stringify(obj))
+
+// localStorage.setItem("name","Mohit")
+// localStorage.setItem("age",24)
+
+// console.log(localStorage.getItem("name"))
+// console.log(localStorage.getItem("age"))
+
+// console.log(JSON.parse(localStorage.getItem("obj")))
+
+// localStorage.removeItem("age")
+//localStorage.clear()///clear everything
+
+// sessionStorage.setItem("name","Mohit")
+// sessionStorage.setItem("age",19)
+
+// console.log(sessionStorage.getItem("name"))
+// console.log(sessionStorage.getItem("age"))
+
+// sessionStorage.removeItem("age")
+
+document.cookie="name=Mohit; expires=Fri, 20 feb 2026 23:59:59 UTC;"
+document.cookie="age=19; expires=Fri, 20 feb 2026 23:59:59 UTC;"
 
